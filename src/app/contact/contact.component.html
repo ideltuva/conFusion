@@ -60,14 +60,14 @@
             dividerColor="{{(feedbackForm.get('telnum').hasError('required') && feedbackForm.get('telnum').touched) ? 'warn': 'primary'}}">
               <input mdInput formControlName="telnum" placeholder="Tel. Number" type="tel" required>
               <md-hint>
-                <span [hidden]="!feedbackForm.get('telnum').hasError('required') && feedbackForm.get('telnum').touched">lastname is required</span>
+                <span [hidden]="!feedbackForm.get('telnum').hasError('required') && feedbackForm.get('telnum').touched">Tel. Number is required</span>
               </md-hint>                
           </md-input-container>
           <md-input-container class="half-width" 
             dividerColor="{{(feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched) ? 'warn': 'primary'}}">
               <input mdInput formControlName="email" placeholder="Email" type="email" required>
               <md-hint>
-                <span [hidden]="!feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched">lastname is required</span>
+                <span [hidden]="!feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched">Email ID is required</span>
               </md-hint>                 
           </md-input-container>
         </p>

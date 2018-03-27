@@ -24,13 +24,13 @@ export class ContactComponent implements OnInit {
   validationMessages = {
     'firstname': {
       'required': 'First Name is required',
-      'minLength': 'First Name must be at least 2 characters long',
-      'maxLength': 'First Name cannot be more than 25 characters long'
+      'minlength': 'First Name must be at least 2 characters long',
+      'maxlength': 'First Name cannot be more than 25 characters long'
     },
     'lastname': {
       'required': 'Last Name is required',
-      'minLength': 'Last Name must be at least 2 characters long',
-      'maxLength': 'Last Name cannot be more than 25 characters long'
+      'minlength': 'Last Name must be at least 2 characters long',
+      'maxlength': 'Last Name cannot be more than 25 characters long'
     },
     'telnum': {
       'required': 'Tel. Number is required',

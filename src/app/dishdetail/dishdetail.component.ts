@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -23,6 +23,8 @@ export class DishdetailComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
 
+  errMess: string;
+
   dishdetails: Dish;
   dishIds: number[];
   prev: number;
@@ -31,7 +33,8 @@ export class DishdetailComponent implements OnInit {
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
     private location: Location,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    @Inject('BaseURL') private BaseURL) {
       this.createForm();
     }
 
@@ -40,7 +43,8 @@ export class DishdetailComponent implements OnInit {
       .subscribe(dishIds => this.dishIds = dishIds);
     this.route.params
       .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-      .subscribe(dishdetails => {this.dishdetails = dishdetails; this.setPrevNext(dishdetails.id)});
+      .subscribe(dishdetails => {this.dishdetails = dishdetails; this.setPrevNext(dishdetails.id); },
+      errmess => this.errMess = <any>errmess);
   }
 
   setPrevNext(dishId: number) {

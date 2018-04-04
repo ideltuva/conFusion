@@ -6,7 +6,7 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex="40" *ngIf="dishdetails" [@visibility]="visibility">
+  <div fxFlex="40" *ngIf="dishdetails" [@visibility]="visibility" [@expand]>
     <div fxFlex>
       <md-card>
         <md-card-header>
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div fxFlex *ngIf="dishdetails" [@visibility]="visibility">
+  <div fxFlex *ngIf="dishdetails" [@visibility]="visibility" [@expand]>
     <md-list >
       <h3>Comments</h3>
       <md-list-item *ngFor="let comment of dishdetails.comments">
